@@ -13,7 +13,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 import java.io.File;
@@ -56,7 +55,7 @@ public class Main {
         driver = new FirefoxDriver();
         driver.get(baseUrl);
         driver.manage().window().maximize();
-        WebElement imgCursoSelenium = driver.findElement(By.xpath("//img[@alt='seleniumBasico_310_185']"));
+        WebElement imgCursoSelenium = driver.findElement(By.xpath("//img[@alt='Automação de Testes com Selenium WebDriver']"));
         System.out.println(imgCursoSelenium.getAttribute("height"));
         System.out.println(imgCursoSelenium.getAttribute("width"));
         driver.quit();
@@ -88,7 +87,7 @@ public class Main {
     public void verificarTituloHomePage(){
         driver = new FirefoxDriver();
         driver.get(baseUrl);
-        assertThat(driver.getTitle(), is("AQALab | Consultoria e Treinamentos em Qualidade de Software"));
+        assertThat(driver.getTitle(), is("QALab | Consultoria e Treinamentos em Qualidade de Software"));
         driver.quit();
     }
 
