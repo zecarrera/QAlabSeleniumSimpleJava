@@ -30,24 +30,24 @@ public class Main {
     }
 
 
-    @Test
+    @Test // Anotation que identifica para o JUnit o método como teste
     public void clicarLupaEDigitarTexto(){
-        driver = new FirefoxDriver();
-        driver.get(baseUrl);
-        WebElement iconeBusca = driver.findElement(By.className("icon-search-2"));
-        iconeBusca.click();
-        WebElement textFieldBusca = driver.findElement(By.id("s"));
-        textFieldBusca.sendKeys("selenium");
-        driver.quit();
+        driver = new FirefoxDriver();  // Inicializa o driver do firefox
+        driver.get(baseUrl);  // Navega para a url
+        WebElement iconeBusca = driver.findElement(By.className("icon-search-2")); // localiza a lupa na interface e armazena na variavel iconeBusca
+        iconeBusca.click(); //Realiza a ação de clicar no iconeBusca
+        WebElement textFieldBusca = driver.findElement(By.id("s")); // localiza o campo texto
+        textFieldBusca.sendKeys("selenium"); //Simula a digitação do conteudo "selenium"
+        driver.quit(); // Encerra o driver
     }
 
     @Test
     public void verificarLinkFaleConosco(){
-        driver = new FirefoxDriver();
-        driver.get(baseUrl);
-        WebElement linkFaleConosco = driver.findElement(By.linkText("Fale conosco"));
-        System.out.println(linkFaleConosco.getText());
-        driver.quit();
+        driver = new FirefoxDriver(); // Inicializa driver firefox
+        driver.get(baseUrl);  // Navega para home
+        WebElement linkFaleConosco = driver.findElement(By.linkText("Fale conosco")); //armazena a localizacao do item fale conosco
+        System.out.println(linkFaleConosco.getText()); // imprime no console o conteudo
+        driver.quit(); //encerra o driver
     }
 
     @Test
@@ -87,7 +87,8 @@ public class Main {
     public void verificarTituloHomePage(){
         driver = new FirefoxDriver();
         driver.get(baseUrl);
-        assertThat(driver.getTitle(), is("QALab | Consultoria e Treinamentos em Qualidade de Software"));
+        assertThat(driver.getTitle(),
+                is("QALab | Consultoria e Treinamentos em Qualidade de Software"));
         driver.quit();
     }
 
