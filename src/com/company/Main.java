@@ -35,6 +35,7 @@ public class Main {
         driver = new FirefoxDriver();  // Inicializa o driver do firefox
         driver.get(baseUrl);  // Navega para a url
         WebElement iconeBusca = driver.findElement(By.className("icon-search-2")); // localiza a lupa na interface e armazena na variavel iconeBusca
+        //By iconeBusca = By.className("icon-search-2");
         iconeBusca.click(); //Realiza a ação de clicar no iconeBusca
         WebElement textFieldBusca = driver.findElement(By.id("s")); // localiza o campo texto
         textFieldBusca.sendKeys("selenium"); //Simula a digitação do conteudo "selenium"
@@ -55,7 +56,7 @@ public class Main {
         driver = new FirefoxDriver();
         driver.get(baseUrl);
         driver.manage().window().maximize();
-        WebElement imgCursoSelenium = driver.findElement(By.xpath("//img[@alt='Automação de Testes com Selenium WebDriver']"));
+        WebElement imgCursoSelenium = driver.findElement(By.xpath("//img[@alt='Site_Img_IntroducaoSelenium']"));
         System.out.println(imgCursoSelenium.getAttribute("height"));
         System.out.println(imgCursoSelenium.getAttribute("width"));
         driver.quit();
@@ -65,6 +66,7 @@ public class Main {
     @Test
     public void exemploDropdown(){
         driver = new FirefoxDriver();
+        driver.manage().window().maximize();
         driver.get("https://classedetestes.wordpress.com/formulario-completo/");
         Select dropdownEstado = new Select(driver.findElement(By.id("g22-estado")));
         dropdownEstado.selectByVisibleText("Pernambuco");
@@ -74,6 +76,7 @@ public class Main {
     @Test
     public void exemploCheckbox(){
         driver = new FirefoxDriver();
+        driver.manage().window().maximize();
         driver.get("https://classedetestes.wordpress.com/formulario-completo/");
         WebElement checkboxRSS = driver.findElement(By.name("g22-assinarfeedrss"));
         if (!checkboxRSS.isSelected()){
